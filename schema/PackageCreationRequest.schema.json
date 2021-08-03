@@ -1,0 +1,61 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://invixo.com/PackageCreationRequest.schema.json",
+    "title": "PackageCreationRequest",
+    "description": "A request to package a Boomi component",
+    "type": "object",
+    "properties": {
+        "name": {
+            "description": "The name of the request",
+            "type": "string",
+            "example": "Create Package"
+        },
+        "env": {
+            "description": "The environment to deploy the package to",
+            "type": "string",
+            "enum": ["0 - Dev", "1 - Test", "2 - Prod"],
+            "example": "0 - Dev"
+        },
+        "processName": {
+            "description": "The name of the process that should be deployed",
+            "type": "string",
+            "example": "Hello World"
+        },
+        "packageVersion": {
+            "description": "The version for the package",
+            "type": "string",
+            "default": "0.0.1",
+            "example": "0.0.1"
+        },
+        "componentType": {
+            "description": "The environment to deploy the package to",
+            "type": "string",
+            "enum": ["certificate","customlibrary","flowservice","process","processroute","tpgroup","webservice"],
+            "example": "0 - Dev"
+        },
+        "notes": {
+            "description": "Additional notes about the package creation request",
+            "type": "string",
+            "example": "Initial install"
+        },
+        "extractComponentXmlFolder": {
+            "description": "Folder where the extracted component should be stored",
+            "type": "string",
+            "example": "HelloWorld"
+        },
+        "tag": {
+            "description": "The tag to attach to the GIT commit",
+            "type": "string",
+            "example": "0.0.1"
+        }
+    },
+    "required": [
+        "name",
+        "env",
+        "processName",
+        "packageVersion",
+        "notes",
+        "extractComponentXmlFolder",
+        "tag"
+    ]
+}

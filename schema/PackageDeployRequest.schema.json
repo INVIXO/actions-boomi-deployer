@@ -1,0 +1,59 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://invixo.com/PackageCreationRequest.schema.json",
+    "title": "PackageDeployRequest",
+    "description": "A request to deploy a Boomi component",
+    "type": "object",
+    "properties": {
+        "name": {
+            "description": "The name of the request",
+            "type": "string",
+            "example": "Create Package"
+        },
+        "env": {
+            "description": "The environment to deploy the package to",
+            "type": "string",
+            "enum": ["0 - Dev", "1 - Test", "2 - Prod"],
+            "example": "0 - Dev"
+        },
+        "processName": {
+            "description": "The name of the process that should be deployed",
+            "type": "string",
+            "example": "Hello World"
+        },
+        "packageVersion": {
+            "description": "The version for the package",
+            "type": "string",
+            "default": "0.0.1",
+            "example": "0.0.1"
+        },
+        "componentType": {
+            "description": "The environment to deploy the package to",
+            "type": "string",
+            "enum": ["certificate","customlibrary","flowservice","process","processroute","tpgroup","webservice"],
+            "example": "0 - Dev"
+        },
+        "componentVersion": {
+            "description": "Optional:- If no version is specified the latest version is used as default",
+            "type": "string"
+        },
+        "notes": {
+            "description": "Additional notes about the package creation request",
+            "type": "string",
+            "example": "Initial install"
+        },
+        "listenerStatus": {
+            "description": "If the listener should start running or paused",
+            "type": "string",
+            "enum": ["RUNNING", "PAUSED"]
+        }
+    },
+    "required": [
+        "name",
+        "env",
+        "processName",
+        "packageVersion",
+        "notes",
+        "listenerStatus"
+    ]
+}
