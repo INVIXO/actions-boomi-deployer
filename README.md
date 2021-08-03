@@ -1,4 +1,6 @@
-Cloned and mirrored from https://github.com/OfficialBoomi/boomicicd-cli for testing purposes
+Cloned and mirrored from https://github.com/OfficialBoomi/boomicicd-cli for testing purposes.
+
+Ultimately we'll use GITHub and GITHub actions, and remove everything but cli/scripts/bin/, cli/scripts/bin/json
 
 # Command Line Interface reference implementation for Boomi CI/CD
 
