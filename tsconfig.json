@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+      "strict": false,
+      "baseUrl": "../node_modules",
+      "target": "es5",
+      "lib": ["es5", "dom"],
+      "types": ["node"],
+      "pretty": true,
+      "esModuleInterop": true,
+      "noFallthroughCasesInSwitch": true,
+      "noImplicitReturns": true,
+      "noUnusedParameters": false,
+      "noUnusedLocals": false,
+      "resolveJsonModule": true,
+    },
+    "include": [
+      "**/*.ts"
+    ],
+    "exclude": [
+      "node_modules"
+    ]
+  }

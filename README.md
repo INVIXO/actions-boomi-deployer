@@ -2,6 +2,17 @@ Cloned and mirrored from https://github.com/OfficialBoomi/boomicicd-cli for test
 
 Ultimately we'll use GITHub and GITHub actions, and remove everything but cli/scripts/bin/, cli/scripts/bin/json
 
+Install swipl: https://www.swi-prolog.org/ and check add to PATH
+
+## REST Model
+The REST model can be generated using following scripts:
+
+If using a linux based system call `npm run spec_linux`
+
+If using windows call `npm run spec_windows`
+
+This downloads the swagger file from SAP and generates the TS artifacts
+
 # Command Line Interface reference implementation for Boomi CI/CD
 
 The CLI utility wraps calls to [Boomi Atomsphere APIs](https://help.boomi.com/bundle/integration/page/r-atm-AtomSphere_API_6730e8e4-b2db-4e94-a653-82ae1d05c78e.html). Handles input and output JSON files and performance orchestration for deploying and managing Boomi runtimes, components and metadata required for CI/CD. 

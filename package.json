@@ -16,5 +16,17 @@
   "bugs": {
     "url": "https://github.com/INVIXO/boomi-deployer/issues"
   },
-  "homepage": "https://github.com/INVIXO/boomi-deployer#readme"
+  "homepage": "https://github.com/INVIXO/boomi-deployer#readme",
+  "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^2.3.9",
+    "@types/fs-extra": "^9.0.12",
+    "@types/node": "^16.4.10",
+    "@typescript-eslint/eslint-plugin": "^4.29.0",
+    "@typescript-eslint/parser": "^4.29.0",
+    "eslint-plugin-import": "^2.23.4"
+  },
+  "dependencies": {
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5"
+  }
 }
