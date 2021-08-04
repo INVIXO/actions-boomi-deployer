@@ -1,0 +1,20 @@
+name: Deploy package
+
+# Currently just runs on pushes to master
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install node.js
+        uses: actions/setup-node@v2
+      - run: npm ci
+      - run: npm run build
