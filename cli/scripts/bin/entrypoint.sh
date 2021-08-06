@@ -5,7 +5,8 @@ then
    return 255;
 fi
 
-baseURL="$baseURL/$accountId"
+baseURL="$baseURL/$ACCOUNT_ID"
+authToken="$AUTH_TOKEN"
 case $COMMAND in
     Create_Deployed_Package) 
         if [ -z "$ENVIRONMENT_ID" -o -z "$PACKAGE_ID" -o -z "$NOTES" -o -z "$LISTENER_STATUS" ]
