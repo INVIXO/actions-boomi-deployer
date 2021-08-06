@@ -1,5 +1,7 @@
 Cloned and mirrored from https://github.com/OfficialBoomi/boomicicd-cli for testing purposes
 
+TODO: Remove templates
+
 # Command Line Interface reference implementation for Boomi CI/CD
 
 The CLI utility wraps calls to [Boomi Atomsphere APIs](https://help.boomi.com/bundle/integration/page/r-atm-AtomSphere_API_6730e8e4-b2db-4e94-a653-82ae1d05c78e.html). Handles input and output JSON files and performance orchestration for deploying and managing Boomi runtimes, components and metadata required for CI/CD. 
