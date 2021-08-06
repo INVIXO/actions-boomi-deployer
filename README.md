@@ -14,7 +14,7 @@ You can call it in a github workflow as shown below:
   uses: INVIXO/boomi-deployer@master
   with:
     ACCOUNT_ID: ...
-    AUTH_TOKEN: ...
+    AUTH_TOKEN: ${{ secrets.BOOMI_TOKEN }}
     COMMAND: Create_Deployed_Package
     ENVIRONMENT_ID: ...
     PACKAGE_ID: ...
@@ -31,7 +31,7 @@ You can call it in a github workflow as shown below:
 Where
 
 - ACCOUNT_ID: (Required) the Boomi Account ID (See accountID= in the URL)
-- AUTH_TOKEN: (Required) BOOMI_TOKEN.{user email}:{API Token} (Ex. BOOMI_TOKEN.example@invixo.com:11111-1111-1111-1111-1111111111)
+- AUTH_TOKEN: (Required) BOOMI_TOKEN.{user email}:{API Token} (Ex. BOOMI_TOKEN.example@invixo.com:11111-1111-1111-1111-1111111111). Should be saved as a github secret
 - COMMAND: (Required) taken from the table below
 - ENVIRONMENT_ID: The environment to query/deploy to
 - PACKAGE_ID: The package GUID to deploy/query
