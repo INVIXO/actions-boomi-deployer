@@ -19,7 +19,7 @@ createJSON
 callAPI
  
 
-if [ ${deploymentId} != null ] && [ ! -z ${deploymentId} ] && [ "null" != ${deploymentId} ]
+if [ "${deploymentId}" != null ] && [ ! -z "${deploymentId}" ] && [ "null" != "${deploymentId}" ]
 then
 	echoi "Found deployed package ${packageId} in env ${envId} with deploymentId ${deploymentId}. This package will not be deployed." 
 fi

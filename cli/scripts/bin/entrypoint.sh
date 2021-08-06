@@ -1,5 +1,5 @@
 #!/bin/bash
-
+env
 #Check if COMMAND is defined
 if [ -z "$COMMAND" ]
 then
@@ -12,7 +12,7 @@ case $COMMAND in
         then
             return 255;
         fi
-        source bin/createDeployedPackage.sh $ENVIRONMENT_ID $PACKAGE_ID $NOTES $LISTENER_STATUS
+        source bin/createDeployedPackage.sh envId=$ENVIRONMENT_ID packageId=$PACKAGE_ID notes=$NOTES listenerStatus=$LISTENER_STATUS
         ;;
     *)
         #Error if command not defined
