@@ -1,0 +1,300 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Boomi Atomsphere API",
+        "description": "This API exposes Atomsphere Objects (https://help.boomi.com/bundle/developer_apis/page/r-atm-AtomSphere_API.html)",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://api.boomi.com/api/rest/v1/invixoconsultinggroupas-BJOGMW",
+            "description": "API for Invixo Account"
+        }
+    ],
+    "tags": [
+        {
+            "name": "PackagedComponent"
+        },
+        {
+            "name": "DeployedPackage"
+        },
+        {
+            "name": "PackagedComponentManifest"
+        },
+        {
+            "name": "Component"
+        },
+        {
+            "name": "ComponentMetadata"
+        },
+        {
+            "name": "Environment"
+        },
+        {
+            "name": "Folder"
+        }
+    ],
+    "paths": {
+        "/PackagedComponent/{componentID}": {
+            "get": {
+                "tags": [
+                    "PackagedComponent"
+                ],
+                "summary": "Gets a specific packaged component",
+                "operationId": "getPackagedComponent",
+                "parameters": [
+                    {
+                        "name": "componentID",
+                        "in": "path",
+                        "description": "The ID of the component",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PackagedComponent"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/PackagedComponent": {
+            "post": {
+                "tags": [
+                    "PackagedComponent"
+                ],
+                "summary": "Creates packaged component",
+                "operationId": "createPackagedComponent",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PackagedComponent"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PackagedComponent"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/PackagedComponent/{packageID}": {
+            "delete": {
+                "tags": [
+                    "PackagedComponent"
+                ],
+                "summary": "Deletes a specific packaged component",
+                "operationId": "deletePackagedComponent",
+                "parameters": [
+                    {
+                        "name": "packageID",
+                        "in": "path",
+                        "description": "The ID of the package",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DeleteResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/PackagedComponent/query": {
+            "post": {
+                "tags": [
+                    "PackagedComponent"
+                ],
+                "summary": "Queries packaged components",
+                "operationId": "queryPackagedComponent",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/QueryRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/QueryResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "PackagedComponent": {
+                "type": "object",
+                "properties": {
+                    "@type": {
+                        "type": "string",
+                        "example": "PackagedComponent"
+                    },
+                    "packageId": {
+                        "type": "string",
+                        "example": "e8dbc278-e970-49e5-84bd-af39d7d38140"
+                    },
+                    "packageVersion": {
+                        "type": "string",
+                        "example": "2.0"
+                    },
+                    "componentId": {
+                        "type": "string",
+                        "example": "66d665d1-3ec7-479c-9e24-8df3fa728cf8"
+                    },
+                    "componentVersion": {
+                        "type": "string",
+                        "example": "2.0"
+                    },
+                    "componentType": {
+                        "type": "string",
+                        "example": "process"
+                    },
+                    "createdDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2017-03-16T13:34:01Z"
+                    },
+                    "createdBy": {
+                        "type": "string",
+                        "example": "user@boomi.com"
+                    },
+                    "notes": {
+                        "type": "string",
+                        "example": "Created for component publication with GUID f7f6ddb6-9437-4a90-9655-f01970068ca8 and version 2."
+                    },
+                    "shareable": {
+                        "type": "boolean",
+                        "example": true
+                    },
+                    "deleted": {
+                        "type": "boolean",
+                        "example": false
+                    }
+                },
+                "required": [
+                    "componentId"
+                ]
+            },
+            "DeleteResponse": {
+                "type": "boolean"
+            },
+            "QueryRequest": {
+                "type": "object",
+                "properties": {
+                    "QueryFilter": {
+                        "type": "object",
+                        "properties": {
+                            "expression": {
+                                "type": "object",
+                                "properties": {
+                                    "operator": {
+                                        "type": "string",
+                                        "description": "'and' or 'or'",
+                                        "enum": [
+                                            "and",
+                                            "or"
+                                        ]
+                                    },
+                                    "nestedExpression": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "argument": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "operator": {
+                                                    "type": "string",
+                                                    "description": "See https://help.boomi.com/bundle/developer_apis/page/r-atm-Query_filters.html for all operators",
+                                                    "enum": [
+                                                        "EQUALS",
+                                                        "LIKE",
+                                                        "NOT_EQUALS",
+                                                        "IS_NULL",
+                                                        "IS_NOT_NULL",
+                                                        "STARTS_WITH",
+                                                        "BETWEEN",
+                                                        "GREATER_THAN",
+                                                        "GREATER_THAN_OR_EQUAL",
+                                                        "LESS_THAN",
+                                                        "LESS_THAN_OR_EQUAL"
+                                                    ]
+                                                },
+                                                "property": {
+                                                    "type": "string",
+                                                    "description": "The name of the field to check against"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "QueryResponse": {
+                "type": "object",
+                "properties": {
+                    "@type": {
+                        "type": "string",
+                        "example": "QueryRequest"
+                    },
+                    "result": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    },
+                    "numberOfResults": {
+                        "type": "integer",
+                        "example": 1
+                    }
+                }
+            }
+        }
+    }
+}
