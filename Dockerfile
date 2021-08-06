@@ -4,7 +4,7 @@ RUN apk add --no-cache jq libxml2-utils bash curl
 
 ENV h1="Content-Type: application/json"
 ENV h2="Accept: application/json"
-ENV baseURL=https://api.boomi.com/api/rest/v1/
+ENV baseURL=https://api.boomi.com/api/rest/v1
 ADD cli/scripts/bin /bin
 ADD cli/scripts/json /json
 ENTRYPOINT ["/bin/entrypoint.sh"]
