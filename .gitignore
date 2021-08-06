@@ -7,3 +7,4 @@ pipeline*.json
 exports*.sh
 *_CodeReviewReport.html
 *_Extensions.json
+conf/
