@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-RUN apk add --no-cache jq libxml2-utils bash curl
+RUN apk add --no-cache jq libxml2-utils bash curl git
 
 ENV h1="Content-Type: application/json"
 ENV h2="Accept: application/json"
