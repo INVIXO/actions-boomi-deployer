@@ -1,0 +1,27 @@
+name: boomi-deployer
+description: Runs jobs on a boomi environment
+author: INVIXO
+branding:
+  color: green
+  icon: cloud-drizzle
+inputs:
+  ACCOUNT_ID:
+    description: 'The Boomi Account ID (See accountID= in the URL)'
+    required: true
+  AUTH_TOKEN:
+    description: 'BOOMI_TOKEN.{user email}:{API Token} (Ex. BOOMI_TOKEN.example@invixo.com:11111-1111-1111-1111-1111111111). Should be saved as a github secret'
+    required: true
+  ENVIRONMENT_ID:
+    description: 'The ID for the environment to run this job in (must match the env in any .conf files)'
+    required: true
+  CONF_FOLDER:
+    description: 'The folder where build (.conf) files are located'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    ACCOUNT_ID: ${{ inputs.ACCOUNT_ID }}
+    authToken: ${{ inputs.AUTH_TOKEN }}
+    ENV: ${{ inputs.ENVIRONMENT_ID }}
+    CONF_FOLDER: ${{ inputs.CONF_FOLDER }}
