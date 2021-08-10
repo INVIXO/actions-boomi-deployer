@@ -7,5 +7,5 @@ ADD cli/scripts/bin /bin
 ADD cli/scripts/json /json
 
 #Make the scripts executable
-RUN find /bin/ -type f -exec chmod +x {}
+RUN chmod +x $(find /bin -type d)
 ENTRYPOINT ["/bin/entrypoint.sh"]
