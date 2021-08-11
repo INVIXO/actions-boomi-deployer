@@ -11,4 +11,5 @@ WORKDIR ${HOME}
 COPY entrypoint.sh bin/
 ENV PATH="${HOME}/bin:${PATH}"
 
-ENTRYPOINT ["entrypoint.sh"]
+#ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["env"]
