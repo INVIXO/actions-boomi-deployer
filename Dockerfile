@@ -6,11 +6,11 @@ ENV h1="Content-Type: application/json" h2="Accept: application/json" baseURL=ht
 
 #RUN git clone https://github.com/OfficialBoomi/boomicicd-cli.git app && chmod +x $HOME
 RUN git clone https://github.com/OfficialBoomi/boomicicd-cli.git app
-WORKDIR ${SCRIPTS}
 
-COPY entrypoint.sh bin/
+COPY entrypoint.sh /bin
+RUN chmod +x /bin/entrypoint.sh
 ENV PATH="${SCRIPTS}/bin:${PATH}"
 
-ENTRYPOINT ["/app/cli/scripts/bin/entrypoint.sh"]
+ENTRYPOINT ["/bin/entrypoint.sh"]
 #ENTRYPOINT ["/bin/bash", "bin/entrypoint.sh"]
 #ENTRYPOINT ["env"]
