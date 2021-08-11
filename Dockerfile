@@ -11,5 +11,5 @@ WORKDIR ${SCRIPTS}
 COPY entrypoint.sh bin/
 ENV PATH="${SCRIPTS}/bin:${PATH}"
 
-ENTRYPOINT ["/bin/bash","bin/entrypoint.sh"]
+ENTRYPOINT ["/bin/bash","env"]
 #ENTRYPOINT ["env"]
